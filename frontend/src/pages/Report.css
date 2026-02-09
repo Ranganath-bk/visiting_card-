@@ -1,0 +1,102 @@
+/* Report.css */
+
+body {
+  background: radial-gradient(circle at top, #0b1220, #05070d);
+  color: #e5e7eb;
+}
+
+/* Smooth entrance */
+.page-enter {
+  animation: pageEnter 450ms ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table styling upgrade */
+table {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+/* Row hover */
+tbody tr {
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+tbody tr:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Inputs (search + edit inputs) */
+input {
+  border-radius: 14px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #e5e7eb !important;
+}
+
+/* Checkbox better look */
+input[type="checkbox"] {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+/* Buttons: add glow on hover */
+button {
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+button:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Subtle neon borders for primary buttons */
+button[style*="background: #2563eb"] {
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.25);
+}
+
+button[style*="background: #dc2626"] {
+  box-shadow: 0 10px 26px rgba(220, 38, 38, 0.20);
+}
+
+button[style*="background: #16a34a"] {
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.22);
+}
+/* Make Name column strong white */
+tbody tr td:nth-child(2) {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.2px;
+}
+
+/* Other columns slightly soft */
+tbody tr td {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Report: Name column (2nd column) must be dark */
+tbody tr td:nth-child(2) {
+  color: #111827 !important;
+  font-weight: 900 !important;
+}
+
+/* Make other columns also readable */
+tbody tr td {
+  color: rgba(17, 24, 39, 0.78) !important;
+  font-weight: 600;
+}

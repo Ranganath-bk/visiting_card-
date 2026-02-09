@@ -1,0 +1,183 @@
+/* visitingCard.css */
+
+/* Smooth global feel */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #0b1220, #05070d);
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle animated gradient overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(37, 99, 235, 0.12),
+    rgba(16, 185, 129, 0.10),
+    rgba(220, 38, 38, 0.10)
+  );
+  filter: blur(40px);
+  opacity: 0.9;
+  animation: bgShift 8s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes bgShift {
+  0% {
+    transform: translate(-2%, -2%) scale(1);
+  }
+  100% {
+    transform: translate(2%, 2%) scale(1.05);
+  }
+}
+
+/* Main container */
+.scan-wrap,
+.visiting-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 18px;
+}
+
+/* Headings */
+h1,
+h2 {
+  letter-spacing: -0.02em;
+}
+
+/* Video / camera box effect */
+.video-frame {
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+  transform: translateY(0);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.video-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.65);
+}
+
+/* Animated glowing border */
+.video-frame::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from 90deg,
+    rgba(37, 99, 235, 0.8),
+    rgba(16, 185, 129, 0.7),
+    rgba(220, 38, 38, 0.7),
+    rgba(37, 99, 235, 0.8)
+  );
+  filter: blur(18px);
+  opacity: 0.35;
+  animation: glowSpin 5s linear infinite;
+  z-index: 0;
+}
+
+@keyframes glowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ensure your video stays above glow */
+.video-frame video,
+.video-frame img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: block;
+}
+
+/* Buttons */
+.btn {
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  color: white;
+}
+
+.btn-muted {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Card container (OCR result box) */
+.glass-card {
+  margin-top: 18px;
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  animation: popIn 380ms ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Inputs */
+input {
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #e5e7eb !important;
+  outline: none;
+  transition: border 200ms ease, transform 200ms ease;
+}
+
+input:focus {
+  border: 1px solid rgba(37, 99, 235, 0.8) !important;
+  transform: translateY(-1px);
+}

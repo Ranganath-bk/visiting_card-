@@ -1,0 +1,54 @@
+/* DeletedRecords.css */
+
+body {
+  background: radial-gradient(circle at top, #190b0b, #05070d);
+  color: #e5e7eb;
+}
+
+/* Table glow red theme */
+table {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+thead {
+  background: linear-gradient(135deg, #dc2626, #991b1b) !important;
+}
+
+/* Row hover effect */
+tbody tr {
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+tbody tr:hover {
+  transform: translateY(-1px);
+  background: rgba(220, 38, 38, 0.08) !important;
+}
+
+/* Restore button glow */
+button[style*="background: #16a34a"] {
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.22);
+}
+/* DeletedRecords table: Name is first column */
+tbody tr td:nth-child(1) {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.2px;
+}
+
+/* Other columns slightly soft */
+tbody tr td {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+/* DeletedRecords: Name column (1st column) must be dark */
+tbody tr td:nth-child(1) {
+  color: #111827 !important;
+  font-weight: 900 !important;
+}
+
+/* Make other columns readable */
+tbody tr td {
+  color: rgba(17, 24, 39, 0.78) !important;
+  font-weight: 600;
+}
+

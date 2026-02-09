@@ -1,0 +1,116 @@
+/* src/components/form/CardForm.css */
+
+.card-form {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+  box-sizing: border-box;
+}
+
+.card-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827 !important;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ ULTRA FORCE INPUT STYLES */
+.card-form input,
+.card-form input:focus,
+.card-form input:active,
+.card-form input:visited,
+.card-form input:hover {
+  width: 100%;
+  height: 46px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 15px;
+
+  /* 🔥 GUARANTEED DARK TEXT */
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+
+  background: #f9fafb !important;
+  box-sizing: border-box;
+}
+
+/* placeholder */
+.card-form input::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
+
+/* focus */
+.card-form input:focus {
+  border-color: #2563eb !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* readonly */
+.card-form input[readonly] {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  background: #f3f4f6 !important;
+  opacity: 1 !important;
+}
+
+/* disabled */
+.card-form input:disabled {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+  background: #f3f4f6 !important;
+  cursor: not-allowed;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  margin-top: 10px;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff !important;
+  background: linear-gradient(90deg, #10b981, #2563eb);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.submit-btn:active {
+  transform: translateY(0px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .card-form {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .submit-btn {
+    grid-column: span 1;
+  }
+}
